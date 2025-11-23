@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Drivers {
+  id        Int       @id @default(autoincrement())
+  name      String    
+  dni       String
+  license   String   @unique
+  birthdate DateTime
+  vehicles  Vehicles[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+
+model Vehicles {
+  id          Int       @id @default(autoincrement())
+  plate       String    @unique
+  brand       String
+  model       String  
+  year        Int
+  driversId   Int
+  drivers     Drivers @relation(fields: [driversId], references: [id], onDelete: Cascade)
+
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+}
+

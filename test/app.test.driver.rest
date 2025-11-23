@@ -1,0 +1,37 @@
+@host = http://localhost:8081
+
+
+####################
+###Conductores
+#################
+
+GET {{host}}/drivers HTTP/1.1
+###
+
+GET {{host}}/drivers/7 HTTP/1.1
+###
+
+POST {{host}}/drivers HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "armando",
+    "dni": "96385214",
+    "license":"ABC-157",
+    "birthdate": "1987-09-07"
+}
+
+###
+
+PATCH {{host}}/drivers/7 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "jossimar",
+    "dni": "44947145",
+    "license":"ABC-173",
+    "birthdate": "1987-09-07"
+}
+###
+
+DELETE {{host}}/drivers/7 HTTP/1.1

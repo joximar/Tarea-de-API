@@ -1,0 +1,36 @@
+@host = http://localhost:8081
+
+#####################
+##vehiculos
+####################
+GET {{host}}/vehicles HTTP/1.1
+###
+
+GET {{host}}/vehicles/3 HTTP/1.1
+###
+
+POST {{host}}/vehicles HTTP/1.1
+Content-Type: application/json
+
+{
+    "plate": "ABC-131",
+    "brand": "Toyota",
+    "model":"Civic",
+    "year": 1987,
+    "driversId":9
+}
+
+###
+PATCH {{host}}/vehicles/10 HTTP/1.1
+Content-Type: application/json
+
+{
+    "plate": "ABC-125",
+    "brand": "Toyota",
+    "model":"marca",
+    "year": 1999,
+    "driversId":8
+}
+###
+
+DELETE {{host}}/vehicles/7 HTTP/1.1
