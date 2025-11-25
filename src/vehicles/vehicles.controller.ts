@@ -35,6 +35,8 @@ export class VehiclesController {
     update(@Param('id', ParseIntPipe) id : number, @Body() updatevehiclesDTO : UpdateVehicleDTO){
        return this.vehiclesService.update(id, updatevehiclesDTO)
     }
+
+    
     //eliminar 
     @Delete(':id')
     delete(@Param('id', ParseIntPipe) id : number){

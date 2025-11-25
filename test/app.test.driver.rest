@@ -8,28 +8,28 @@
 GET {{host}}/drivers HTTP/1.1
 ###
 
-GET {{host}}/drivers/7 HTTP/1.1
+GET {{host}}/drivers/1 HTTP/1.1
 ###
 
 POST {{host}}/drivers HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "armando",
-    "dni": "96385214",
-    "license":"ABC-157",
-    "birthdate": "1987-09-07"
+    "name": "jhonatan",
+    "dni": "78947158",
+    "license":"FBD-157",
+    "birthdate": "1988-12-09"
 }
 
 ###
 
-PATCH {{host}}/drivers/7 HTTP/1.1
+PUT  {{host}}/drivers/8 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "jossimar",
-    "dni": "44947145",
-    "license":"ABC-173",
+    "name": "Maria Lopez",
+    "dni": "412345678",
+    "license":"ABC-111",
     "birthdate": "1987-09-07"
 }
 ###
