@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Put} from '@nestjs/common';
 import { VehiclesService } from './vehicles.service';
 import { UpdateVehicleDTO } from './dtos/update.vehicles.dto';
 import { CreateVehicleDTO } from './dtos/create.vehicles.dto';
@@ -31,7 +31,7 @@ export class VehiclesController {
 
 
     //actualizar
-    @Patch(':id')
+    @Put(':id')
     update(@Param('id', ParseIntPipe) id : number, @Body() updatevehiclesDTO : UpdateVehicleDTO){
        return this.vehiclesService.update(id, updatevehiclesDTO)
     }

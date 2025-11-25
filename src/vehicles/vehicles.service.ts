@@ -37,13 +37,21 @@ export class VehiclesService  {
 
     //actualizar vehiculo 
     async update(id: number, updatevehicleDTO: UpdateVehicleDTO){
-        return this.prisma.vehicles.update({where:{id},data:updatevehicleDTO});
+        try{
+            return this.prisma.vehicles.update({where:{id},data:updatevehicleDTO});
+        }catch{
+            throw new NotFoundException(`Vehiculo con ID ${id} no encontrado`)
+        }
     }
     
 
     //eliminar vehiculo
     async delete(id:number) {
-        return await this.prisma.vehicles.delete({where:{id}});
+        try{
+            return await this.prisma.vehicles.delete({where:{id}});
+        }catch(error){
+            throw new NotFoundException(`Vehiculo con ID ${id} no encontrado`)
+        }
     }
 
 

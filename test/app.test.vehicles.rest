@@ -6,7 +6,7 @@
 GET {{host}}/vehicles HTTP/1.1
 ###
 
-GET {{host}}/vehicles/3 HTTP/1.1
+GET {{host}}/vehicles/10 HTTP/1.1
 ###
 
 POST {{host}}/vehicles HTTP/1.1
@@ -21,16 +21,16 @@ Content-Type: application/json
 }
 
 ###
-PATCH {{host}}/vehicles/10 HTTP/1.1
+PUT  {{host}}/vehicles/10 HTTP/1.1
 Content-Type: application/json
 
 {
     "plate": "ABC-125",
-    "brand": "Toyota",
-    "model":"marca",
+    "brand": "Corolla",
+    "model":"TiocT",
     "year": 1999,
     "driversId":8
 }
 ###
 
-DELETE {{host}}/vehicles/7 HTTP/1.1
+DELETE {{host}}/vehicles/15 HTTP/1.1

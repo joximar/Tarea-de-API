@@ -8,30 +8,30 @@
 GET {{host}}/drivers HTTP/1.1
 ###
 
-GET {{host}}/drivers/1 HTTP/1.1
+GET {{host}}/drivers/10 HTTP/1.1
 ###
 
 POST {{host}}/drivers HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "jhonatan",
-    "dni": "78947158",
-    "license":"FBD-157",
+    "name": "jossimar neciosup",
+    "dni": "4484718",
+    "license":"FBD-158",
     "birthdate": "1988-12-09"
 }
 
 ###
 
-PUT {{host}}/drivers/5222 HTTP/1.1
+PUT {{host}}/drivers/9 HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Maria Lopez",
-    "dni": "412345678",
-    "license":"ABC-111",
-    "birthdate": "1987-09-07"
+    "name": "jose mendoza",
+    "dni": "78945611",
+    "license":"DFE-951",
+    "birthdate": "1987-12-07"
 }
 ###
 
-DELETE {{host}}/drivers/1 HTTP/1.1
+DELETE {{host}}/drivers/8 HTTP/1.1
