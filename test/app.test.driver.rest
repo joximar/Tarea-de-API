@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ###
 
-PUT {{host}}/drivers/8 HTTP/1.1
+PUT {{host}}/drivers/5222 HTTP/1.1
 Content-Type: application/json
 
 {
@@ -34,4 +34,4 @@ Content-Type: application/json
 }
 ###
 
-DELETE {{host}}/drivers/7 HTTP/1.1
+DELETE {{host}}/drivers/1 HTTP/1.1

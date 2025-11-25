@@ -31,12 +31,20 @@ export class DriversService {
 
     //actualizar conductor
     async update(id:number, updatedriverDTO:UpdateDriversDTO){
-        return await this.prisma.drivers.update({where:{id}, data:updatedriverDTO});
+        try{
+            return await this.prisma.drivers.update({where:{id}, data:updatedriverDTO});
+        }catch(error){
+            throw new NotFoundException(`Conductor con ID ${id} no encontrado`)
+        }
     }
 
     //eliminar conductor
 
     async delete(id:number){
-        return await this.prisma.drivers.delete({where:{id}});
+        try{
+            return await this.prisma.drivers.delete({where:{id}});
+        }catch(error){
+            throw new NotFoundException(`conductor con ID ${id} no encontrado`)
+        }
     }
 }
